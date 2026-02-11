@@ -1,0 +1,91 @@
+/* Bear slideshow background using photo URLs */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    animation: slideShow 15s infinite;
+}
+
+@keyframes slideShow {
+    0% { background-image: url(""); }
+    33% { background-image: url("https://images.unsplash.com/photo-1570284613060-766c33850e27"); }
+    66% { background-image: url("https://images.unsplash.com/photo-1546182990-dffeafbe841d"); }
+    100% { background-image: url("https://images.unsplash.com/photo-1589652717521-10c0d092dea9"); }
+}
+
+/* Light brown overlay */
+.overlay {
+    background-color: rgba(181, 140, 99, 0.7);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Center box */
+.content {
+    text-align: center;
+    background: #f5deb3;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+h1 { color: #5c4033; }
+p { font-size: 18px; color: #4e342e; }
+
+button {
+    background-color: #8b5e3c;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #6d4c41;
+}
+
+/* Confetti blast effect */
+.confetti {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+}
+
+.confetti span {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: red;
+    animation: fall linear forwards;
+}
+
+.confetti span:nth-child(2n){ background: yellow; }
+.confetti span:nth-child(3n){ background: blue; }
+.confetti span:nth-child(4n){ background: pink; }
+.confetti span:nth-child(5n){ background: green; }
+
+@keyframes fall {
+    0% {
+        transform: translateY(-50px) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(600px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+#wish {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #3e2723;
+}

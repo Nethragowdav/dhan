@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🥂Happiii birthdayyyyyy Dhanuu ❤️🎀</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="overlay">
+        <div class="content">
+            <h1>🥂Happiii Birthdayyyyy BOII🎀❤️</h1>
+            <p> Ah year older yaa!!! best wishes fr yur up comming jounery....
+                filled with ocean of smileyyyy antha heltha hpyyy bhdd😁😁
+            </p>
+            <button onclick="blastSurprise()">Click for Surprise 🎁</button>
+            <p id="wish"></p>
+        </div>
+    </div>
+
+    <!-- Confetti Blast -->
+    <div class="confetti" id="confetti"></div>
+
+    <script>
+        function blastSurprise() {
+            document.getElementById("wish").innerHTML =
+            "💥That'ss probably MEEE 😅😜";
+
+            const confetti = document.getElementById("confetti");
+
+            for (let i = 0; i < 60; i++) {
+                let span = document.createElement("span");
+                span.style.left = Math.random() * window.innerWidth + "px";
+                span.style.animationDuration = (Math.random() * 2 + 2) + "s";
+                confetti.appendChild(span);
+
+                setTimeout(() => {
+                    span.remove();
+                }, 4000);
+            }
+        }
+    </script>
+
+</body>
+</html>
